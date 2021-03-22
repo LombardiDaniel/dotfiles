@@ -1,0 +1,9 @@
+[init]
+    defaultBranch = main
+[user]
+    name = Daniel Lombardi
+    email = lombardi.daniel.o@gmail.com
+[core]
+    editor = nano
+[credential]
+    username = LombardiDaniel
