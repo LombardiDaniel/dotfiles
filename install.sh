@@ -5,6 +5,8 @@ dotfiles=(
 gitconfig
 hyper.js
 zshrc
+envvars
+aliases
 )
 
 

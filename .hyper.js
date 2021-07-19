@@ -2,6 +2,10 @@
 // which will not automatically be merged into this file.
 // See https://hyper.is#cfg for all currently supported options.
 
+// Obs:
+//     You may want to change the HEX value of black in $HOME/.hyper_plugins/node_modules/hyper-oceanic-next/index.js
+//     to add some transparency. "#1b2b34" == "rgba(13,25,19,.5)"
+
 module.exports = {
     config: {
 
@@ -9,6 +13,20 @@ module.exports = {
             width: 1100,
             height: 440,
         },
+
+        // opacity: {
+        //     focus: 0.9,
+        //     blur: 0.9,
+        //     // opacity: 0.3
+        // },
+
+
+        hyperTransparent: {
+            backgroundColor: '#222C31',
+            opacity: 0.2,
+            vibrancy: 'ultra-dark' // ['', 'dark', 'medium-light', 'ultra-dark']
+        },
+
 
         // choose either `'stable'` for receiving highly polished,
         // or `'canary'` for less polished but more frequent updates
@@ -49,7 +67,8 @@ module.exports = {
 
         // terminal background color
         // opacity is only supported on macOS
-        backgroundColor: '#222C31',
+        // backgroundColor: '#222C31',
+        // backgroundColor: 'rgba(13,25,19,.5)',
 
         // terminal selection color
         selectionColor: 'rgba(248,28,229,0.3)',
@@ -79,22 +98,22 @@ module.exports = {
         // including the 6 x 6 color cubes and the grayscale map, just provide
         // an array here instead of a color map object
         colors: {
-            black: '#222C31',
-            red: '#E54B4B',
-            green: '#9ECE58',
-            yellow: '#FAED70',
-            blue: '#396FE2',
-            magenta: '#BB80B3',
-            cyan: '#2DDAFD',
-            white: '#d0d0d0',
-            lightBlack: '#6b6b6b',
+            black: '#1A262D',
+            red: '#E8545D',
+            green: '#8FBF8C',
+            yellow: '#F9BF61',
+            blue: '#5C90C3',
+            magenta: '#BD8ABB',
+            cyan: '#56AAA9',
+            white: '#9DA4B1',
+            lightBlack: '#2E363D',
             lightRed: '#FF5370',
-            lightGreen: '#C3E88D',
-            lightYellow: '#FFCB6B',
-            lightBlue: '#82AAFF',
-            lightMagenta: '#C792EA',
-            lightCyan: '#89DDFF',
-            lightWhite: '#ffffff'
+            lightGreen: '#8FBF8C',
+            lightYellow: '#F9BF61',
+            lightBlue: '#5C90C3',
+            lightMagenta: '#BD8ABB',
+            lightCyan: '#56AAA9',
+            lightWhite: '#D3DAE5'
         },
 
         // the shell to run when spawning a new session (i.e. /usr/local/bin/fish)
@@ -152,7 +171,13 @@ module.exports = {
     //   `hyperpower`
     //   `@company/project`
     //   `project#1.0.1`
-    plugins: ["hyper-window-size", "hyper-quit"],
+    plugins: [
+        "hyper-window-size",
+        "hyper-quit",
+        // "hyper-opacity",
+        'hyper-transparent',
+        "hyper-oceanic-next"
+    ],
 
     // in development, you can create a directory under
     // `~/.hyper_plugins/local/` and include it here
@@ -163,4 +188,5 @@ module.exports = {
     // Example
     // 'window:devtools': 'cmd+alt+o',
     },
+
 };
