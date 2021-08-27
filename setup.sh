@@ -28,11 +28,11 @@ pygments
 
 # Modules with different names depending on the OS:
 base_installs_mac_only=(
-pygments
+# pygments
 )
 
 base_installs_arch_only=(
-python-pygments
+# python-pygments
 )
 
 for i in ${base_installs[@]} ; do
