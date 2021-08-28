@@ -1,5 +1,14 @@
 # Python Virtualenvs
-alias mkvenv3.8='virtualenv -p python3.8 venv.nosync && source ./venv.nosync/bin/activate && pip install pylint'
-alias mkvenv3.9='virtualenv -p python3.9 venv.nosync && source ./venv.nosync/bin/activate && pip install pylint'
-alias mkvenv='virtualenv venv.nosync && source ./venv.nosync/bin/activate && pip install pylint'
+venv_utils () {
+    # We use venv.nosync to make icloud ignore it, then the symlink is used to
+    # 'remove' the '.' from the name so that pylint from Atom can see it
+    virtualenv -p python$1 venv.nosync
+    source ./venv.nosync/bin/activate
+    pip install pylint
+    ln -s venv.nosync venv
+}
+
+alias mkvenv3.8=venv_utils '3.8'
+alias mkvenv3.9=venv_utils '3.9'
+alias mkvenv=venv_utils
 alias activenv='source ./venv.nosync/bin/activate'
