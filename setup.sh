@@ -22,17 +22,18 @@ base_installs=(
 bpytop
 git
 hyper
-pygments
 )
 
+# Creates vim/undodir and installs plugin manager
+mkdir -p /.vim/undodir
+curl -fLo '~/.vim/autoload/plug.vim' --create-dirs \
+     'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 # Modules with different names depending on the OS:
 base_installs_mac_only=(
-# pygments
 )
 
 base_installs_arch_only=(
-# python-pygments
 )
 
 for i in ${base_installs[@]} ; do

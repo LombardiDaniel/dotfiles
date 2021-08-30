@@ -16,13 +16,6 @@ for i in ${dotfiles[@]} ; do
     ln -snf ~/dotfiles/.$i ~/.$i
 done
 
-# Creates vim/undodir and installs plugin manager
-mkdir -p ~/.vim/undodir
-curl -fLo '~/.vim/autoload/plug.vim' --create-dirs \
-    'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-
-
-
 # Confs
 confs=(
 bpytop

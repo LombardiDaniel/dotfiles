@@ -12,7 +12,3 @@ set nobackup
 set undodir=~/.vim/undodir
 set undofile
 
-call plug#begin('~/.vim/plugged')
-
-
-call plug#end()
