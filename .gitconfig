@@ -4,6 +4,6 @@
     name = Daniel Lombardi
     email = lombardi.daniel.o@gmail.com
 [core]
-    editor = nano
+    editor = vim
 [credential]
     username = LombardiDaniel
