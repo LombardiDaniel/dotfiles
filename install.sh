@@ -8,6 +8,7 @@ zshrc
 vimrc
 envvars
 aliases
+gdbinit
 )
 
 
