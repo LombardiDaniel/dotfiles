@@ -1,6 +1,6 @@
 # Python Virtualenvs
 venv_utils () {
-    # We use venv.nosync to make icloud ignore it, then the symlink is used to
+    # We use 'venv.nosync' to make icloud ignore it, then the symlink is used to
     # 'remove' the '.' from the name so that pylint from Atom can see it
     virtualenv -p python$1 venv.nosync
     source ./venv.nosync/bin/activate

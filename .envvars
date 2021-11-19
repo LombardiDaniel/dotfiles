@@ -1,1 +1,7 @@
 export PYTHONDONTWRITEBYTECODE=1
+
+#### - MARVIN.AI - ####
+export WORKON_HOME=$HOME/.virtualenvs
+export MARVIN_HOME=$HOME/marvin
+export MARVIN_DATA_PATH=$HOME/marvin/data
+source virtualenvwrapper.sh

@@ -53,3 +53,9 @@ export PYTHONDONTWRITEBYTECODE=1
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
+
+#### - Setting keyboard accents for Apple Keyboard -  ####
+# > Should be done on boot -> make cronjob?
+if [[ "$kernel" == "Linux" ]]; then
+    setxkbmap us mac lv3:lalt_switch lv3:ralt_alt
+fi
