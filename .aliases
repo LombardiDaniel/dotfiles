@@ -8,7 +8,25 @@ venv_utils () {
     ln -s venv.nosync venv
 }
 
+conda_utils () {
+    # We use venv.nosync to make icloud ignore it, then the symlink is used to
+    # 'remove' the '.' from the name so that pylint from Atom can see it
+    conda create -n venv.nosync python=$1 anaconda
+    source activate venv.nosync
+    conda install -n venv.nosync pylint
+    ln -s  /Users/daniellombardi/anaconda3/envs/venv.nosync venv
+}
+
+alias mkconda3.7=conda_utils '3.7'
+alias mkconda3.8=conda_utils '3.8'
+alias mkconda3.9=conda_utils '3.9'
+
+alias mkvenv3.7=venv_utils '3.7'
 alias mkvenv3.8=venv_utils '3.8'
 alias mkvenv3.9=venv_utils '3.9'
 alias mkvenv=venv_utils
+
 alias activenv='source ./venv.nosync/bin/activate'
+alias acticonda='source ~/anaconda3/envs/venv.nosync/bin/activate'
+
+alias condadel='conda remove -n venv.nosync -all'
