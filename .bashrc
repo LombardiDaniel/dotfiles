@@ -10,6 +10,13 @@ source $HOME/dotfiles/.envvars
 # Path to your oh-my-bash installation.
 export OSH=/home/$USER/.oh-my-bash
 
+# Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+    export EDITOR='vim'
+else
+    export EDITOR='vim'
+fi
+
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-bash is loaded.
 OSH_THEME="agnoster"
@@ -130,5 +137,12 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+#### - Setting keyboard accents for Apple Keyboard -  ####
+# > Should be done on boot -> make cronjob?
+if [[ "$kernel" == "Linux" ]]; then
+    setxkbmap us mac lv3:lalt_switch lv3:ralt_alt
+fi
+
 
 export PATH=$PATH:$HOME/bin

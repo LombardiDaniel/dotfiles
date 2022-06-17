@@ -17,6 +17,7 @@ conda_utils () {
     ln -s  /Users/daniellombardi/anaconda3/envs/venv.nosync venv
 }
 
+alias mkconda=conda_utils '3.7'
 alias mkconda3.7=conda_utils '3.7'
 alias mkconda3.8=conda_utils '3.8'
 alias mkconda3.9=conda_utils '3.9'
