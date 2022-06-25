@@ -1,3 +1,8 @@
+# because apple:
+if [[ `uname` == "Darwin" ]]; then
+    alias gdb='sudo gdb'
+fi
+
 # Python Virtualenvs
 venv_utils () {
     # We use 'venv.nosync' to make icloud ignore it, then the symlink is used to
