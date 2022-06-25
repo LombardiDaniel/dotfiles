@@ -17,6 +17,12 @@ conda_utils () {
     ln -s  /Users/daniellombardi/anaconda3/envs/venv.nosync venv
 }
 
+create_from_template () {
+    cp ${HOME}/dotfiles/TEMPLATES${1}/* .
+    ls
+}
+
+
 alias mkconda=conda_utils '3.7'
 alias mkconda3.7=conda_utils '3.7'
 alias mkconda3.8=conda_utils '3.8'
@@ -31,3 +37,6 @@ alias activenv='source ./venv.nosync/bin/activate'
 alias acticonda='source ~/anaconda3/envs/venv.nosync/bin/activate'
 
 alias condadel='conda remove -n venv.nosync -all'
+
+# school work templates
+alias mkcpp="cp ${HOME}/dotfiles/TEMPLATES/CPP/* . && ls"
