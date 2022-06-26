@@ -38,7 +38,8 @@ int main(int argc, char const *argv[]) {
         int *pesos = new int[numMoedas];
         for (size_t i = 0; i < numMoedas; i++)
             fscanf(fp, "%d", &pesos[i]);
-    }
+    } else
+        printf("\033[1;31m FILE NOT FOUND. \033[0m\n");
 
     fclose(fp);
 
