@@ -55,21 +55,21 @@ start_OS_dev_env () {
 
     # docker run --rm -it -v $(pwd):/usr/src/project -w="/usr/src/project" gcc:latest "/bin/sh"
 
-    docker run --rm -it -v $(pwd):/usr/src/project gcc:latest /bin/sh -c "cd /usr/src/project && ls && /bin/bash"
+    docker run --rm -it -v "`pwd`:/usr/src/project" gcc:latest /bin/sh -c "cd /usr/src/project && ls && /bin/bash"
 
     echo "\nDon't forget to run 'colima stop' if you're done using containers."
     # colima stop
 }
 
 # python venvs
-alias mkconda=conda_utils '3.7'
-alias mkconda3.7=conda_utils '3.7'
-alias mkconda3.8=conda_utils '3.8'
-alias mkconda3.9=conda_utils '3.9'
+alias mkconda="conda_utils '3.7'"
+alias mkconda3.7="conda_utils '3.7'"
+alias mkconda3.8="conda_utils '3.8'"
+alias mkconda3.9="conda_utils '3.9'"
 
-alias mkvenv3.7=venv_utils '3.7'
-alias mkvenv3.8=venv_utils '3.8'
-alias mkvenv3.9=venv_utils '3.9'
+alias mkvenv3.7="venv_utils '3.7'"
+alias mkvenv3.8="venv_utils '3.8'"
+alias mkvenv3.9="venv_utils '3.9'"
 alias mkvenv=venv_utils
 
 alias activenv='source ./venv.nosync/bin/activate'
@@ -79,8 +79,8 @@ alias condadel='conda remove -n venv.nosync -all'
 
 
 # school work templates
-alias mkcpp=create_from_template 'CPP'
-alias mkc=create_from_template 'C'
+alias mkcpp="create_from_template 'CPP'"
+alias mkc="create_from_template 'C'"
 
 
 # docker and SO
