@@ -22,5 +22,6 @@ r2 -d $FILE_NAME # degub
     aaa
     afl
     db $WHERE # plaecs breakpoint
+    V! # -> good alternative
     VV
     ;dc # runs program

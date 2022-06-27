@@ -53,7 +53,9 @@ start_OS_dev_env () {
         colima start
     fi
 
-    docker run --rm -it -v $(pwd):/usr/src gcc:latest
+    # docker run --rm -it -v $(pwd):/usr/src/project -w="/usr/src/project" gcc:latest "/bin/sh"
+
+    docker run --rm -it -v $(pwd):/usr/src/project gcc:latest /bin/sh -c "cd /usr/src/project && ls && /bin/bash"
 
     echo "\nDon't forget to run 'colima stop' if you're done using containers."
     # colima stop
