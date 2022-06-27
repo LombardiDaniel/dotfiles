@@ -22,6 +22,7 @@ base_installs=(
 bpytop
 git
 hyper
+docker
 )
 
 # Creates vim/undodir and installs plugin manager
@@ -31,6 +32,7 @@ curl -fLo '~/.vim/autoload/plug.vim' --create-dirs \
 
 # Modules with different names depending on the OS:
 base_installs_mac_only=(
+colima
 )
 
 base_installs_arch_only=(

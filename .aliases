@@ -23,11 +23,43 @@ conda_utils () {
 }
 
 create_from_template () {
-    cp ${HOME}/dotfiles/TEMPLATES${1}/* .
+    cp ${HOME}/dotfiles/TEMPLATES/${1}/* .
     ls
 }
 
+start_OS_dev_envDEPRECATED () {
 
+    docker ps > /dev/null 2>&1
+    if [ $? -eq 1 ]; then
+        echo "Launching Docker..."
+        # open -a docker
+        colima start > /dev/null 2>&1
+
+        docker ps > /dev/null 2>&1
+        while [ $? -eq 1 ]
+        do
+            sleep 1
+            docker ps > /dev/null 2>&1
+        done
+    fi
+
+    docker run --rm -it -v $(pwd):/usr/src gcc:latest # "cd /usr/src && ls"
+}
+
+start_OS_dev_env () {
+
+    docker ps > /dev/null 2>&1
+    if [ $? -eq 1 ]; then
+        colima start
+    fi
+
+    docker run --rm -it -v $(pwd):/usr/src gcc:latest
+
+    echo "\nDon't forget to run 'colima stop' if you're done using containers."
+    # colima stop
+}
+
+# python venvs
 alias mkconda=conda_utils '3.7'
 alias mkconda3.7=conda_utils '3.7'
 alias mkconda3.8=conda_utils '3.8'
@@ -43,5 +75,11 @@ alias acticonda='source ~/anaconda3/envs/venv.nosync/bin/activate'
 
 alias condadel='conda remove -n venv.nosync -all'
 
+
 # school work templates
-alias mkcpp="cp ${HOME}/dotfiles/TEMPLATES/CPP/* . && ls"
+alias mkcpp=create_from_template 'CPP'
+alias mkc=create_from_template 'C'
+
+
+# docker and SO
+alias here=start_OS_dev_env
