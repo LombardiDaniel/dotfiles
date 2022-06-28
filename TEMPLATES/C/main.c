@@ -1,5 +1,5 @@
 // Daniel Lombardi - RA: 738340
-//      g++ -Wall -pedantic -O2 -Wno-unused-result -g main.cpp -o main.out -std=c++11
+//      gcc -Wall -pedantic -Wextra -O2 -g main.c -o main.out -lpthread
 
 #include <stdarg.h>
 #include <stdio.h>
