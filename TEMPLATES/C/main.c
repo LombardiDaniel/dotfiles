@@ -9,6 +9,9 @@
 #define TAM_NOME                                        1<<10
 #define DEBUG                                               0
 
+#define RED                                      "\033[1;31m"
+#define WHITE                                     "\033[0m\n"
+
 
 void log(const char* message ...);
 void log(const char* message);
@@ -36,9 +39,9 @@ int main(int argc, char const *argv[]) {
             fscanf(fp, "%d", &pesos[i]);
 
     } else {
-        printf("\033[1;31m");
+        printf(RED);
         printf("FILE NOT FOUND\n");
-        printf("\033[0m\n");
+        printf(WHITE);
     }
 
     fclose(fp);

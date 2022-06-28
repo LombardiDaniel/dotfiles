@@ -11,6 +11,9 @@
 #define TAM_NOME                                        1<<10
 #define DEBUG                                               0
 
+#define RED                                      "\033[1;31m"
+#define WHITE                                     "\033[0m\n"
+
 
 template<typename... Args>
 void log(const char* message, Args... args);
@@ -30,7 +33,6 @@ int main(int argc, char const *argv[]) {
     FILE *fp = fopen(fileName.c_str(), "r");
 
     if (fp != NULL) {
-
         long long unsigned numMoedas;
         fscanf(fp, "%llu", &numMoedas);
         log("numMoedas: %lld\n", numMoedas);
@@ -39,9 +41,9 @@ int main(int argc, char const *argv[]) {
         for (size_t i = 0; i < numMoedas; i++)
             fscanf(fp, "%d", &pesos[i]);
     } else {
-        printf("\033[1;31m");
+        printf(RED);
         printf("FILE NOT FOUND\n");
-        printf("\033[0m\n");
+        printf(WHITE);
     }
 
     fclose(fp);
