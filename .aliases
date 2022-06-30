@@ -89,3 +89,4 @@ alias mkc="create_from_template 'C'"
 
 # docker and SO
 alias here=start_OS_dev_env
+alias ghidra=ghidraRun
