@@ -3,12 +3,25 @@
 kernel=`uname`
 
 if [[ "$kernel" == "Linux" ]]; then
-    # Updated local db
-    pacman -Syyy
-    install_prefix="pacman -S"
+
+    debian=`apt-get NOT_A_COMMAND`
+    if [[ $? -eq 0 ]]; then
+        # Updated local db
+        sudo apt-get update
+        sudo apt-get upgrade -y
+        install_prefix="sudo apt-get -y"
+    else
+        arch=`pacman NOT_A_COMMAND`
+        if [[ $? -eq 0 ]]; then
+            pacman -Syyy
+            install_prefix="pacman -S"
+        fi
+    fi
+
     $install_prefix zsh
     # MUST SET ZSH SHELL TO DEFAULT MANUALLY
     # chsh -s $(which zsh)
+    # does this set shell permanently?
 
 elif [[ "$kernel" == "Darwin" ]]; then
     # Installs brew

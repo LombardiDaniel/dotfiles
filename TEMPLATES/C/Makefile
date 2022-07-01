@@ -1,5 +1,5 @@
 main.out: main.c
-	gcc -Wall -pedantic -Wextra -O0 -g main.c -o main.out -lpthread
+	gcc -Wall -pedantic -Wextra -O0 -g main.c -o main.out
 
 asm: main.c
-	gcc -Wall -pedantic -Wextra -O0 -g main.c -o main.asm -lpthread -S
+	gcc -Wall -pedantic -Wextra -O0 -g main.c -o main.asm -S

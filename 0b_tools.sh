@@ -6,7 +6,7 @@ strings $FILE_NAME # get strings inside hex
 
 man syscalls
 
-strace $FILE_NAME # prints what gets executed (if you include parameter as well)
+strace $FILE_NAME # prints out syscalls in program
 
 ltrace $FILE_NAME # same but with library functions
 
