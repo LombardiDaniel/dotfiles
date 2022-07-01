@@ -85,6 +85,7 @@ alias condadel='conda remove -n venv.nosync -all'
 # school work templates
 alias mkcpp="create_from_template 'CPP'"
 alias mkc="create_from_template 'C'"
+alias mkso="create_from_template 'SO'"
 
 
 # docker and SO
