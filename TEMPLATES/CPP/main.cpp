@@ -12,7 +12,7 @@
 #define DEBUG                                               0
 
 #define RED                                      "\033[1;31m"
-#define WHITE                                     "\033[0m\n"
+#define WHITE                                       "\033[0m"
 
 
 template<typename... Args>

@@ -22,6 +22,13 @@ conda_utils () {
     ln -s  /Users/daniellombardi/anaconda3/envs/venv.nosync venv
 }
 
+pip_freeze() {
+    pipreqs --use-local # https://github.com/bndr/pipreqs
+    # pip uninstall pylint -y > /dev/null 2>&1
+    # pip freeze > requirements.txt
+    # pip install pylint > /dev/null 2>&1
+}
+
 create_from_template () {
     cp ${HOME}/dotfiles/TEMPLATES/${1}/* .
     ls
@@ -81,9 +88,11 @@ alias acticonda='source ~/anaconda3/envs/venv.nosync/bin/activate'
 
 alias condadel='conda remove -n venv.nosync -all'
 
+alias pipfrz=pip_freeze
 
 # school work templates
 alias mkcpp="create_from_template 'CPP'"
+alias mkcpproj="create_from_template 'CPP_PROJECT'"
 alias mkc="create_from_template 'C'"
 alias mkso="create_from_template 'OS'"
 alias mkos="create_from_template 'OS'"
