@@ -33,18 +33,29 @@ create_from_template () {
 
     source_dir=${HOME}/dotfiles/TEMPLATES/${1}
 
+    copied_files=()
     for file_path in $source_dir/(.[^.]*|*); do
         file="$(basename $file_path)"
 
         if [[ ! -f "./${file}" ]]; then
             cp ${HOME}/dotfiles/TEMPLATES/${1}/${file} .
+            copied_files+=("${file}")
         else
             echo "Unable to include batteries for: \"${file}\""
         fi
 
     done
 
-    ls -a
+    new_line=0
+    for file_name in "${copied_files[@]}"; do
+        echo -n "${file_name}\t"
+        new_line=1
+    done
+
+    if [ "${new_line}" -eq 1 ]; then
+        echo ""
+    fi
+
 }
 
 start_OS_dev_env_NO_COLIMA () {
