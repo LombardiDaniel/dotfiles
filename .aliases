@@ -30,8 +30,12 @@ pip_freeze() {
 }
 
 create_from_template () {
-    cp ${HOME}/dotfiles/TEMPLATES/${1}/* .
-    ls
+    if [[ ! -f './main.c' && ! -f 'Makefile' ]]; then
+        cp ${HOME}/dotfiles/TEMPLATES/${1}/* .
+        ls
+    else
+        echo 'Unable to include batteries, main.c and Makefile would be overwriten!'
+    fi
 }
 
 start_OS_dev_env_NO_COLIMA () {
