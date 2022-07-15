@@ -38,7 +38,7 @@ create_from_template () {
         file="$(basename $file_path)"
 
         if [[ ! -f "./${file}" ]]; then
-            cp ${HOME}/dotfiles/TEMPLATES/${1}/${file} .
+            cp -r ${HOME}/dotfiles/TEMPLATES/${1}/${file} .
             copied_files+=("${file}")
         else
             echo "Unable to include batteries for: \"${file}\""
