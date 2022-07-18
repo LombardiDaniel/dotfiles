@@ -9,8 +9,16 @@
 #define TAM_NOME                                        1<<10
 #define DEBUG                                               0
 
-#define RED                                      "\033[1;31m"
-#define WHITE                                       "\033[0m"
+#define BLACK                                      "\e[0;30m"
+#define RED                                        "\e[0;31m"
+#define GREEN                                      "\e[0;32m"
+#define YELLOW                                     "\e[0;33m"
+#define BLUE                                       "\e[0;34m"
+#define MAGENTA                                    "\e[0;35m"
+#define CYAN                                       "\e[0;36m"
+#define WHITE                                      "\e[0;37m"
+#define RESET                                       "\x1b[0m"
+#define BOLD                                       "\033[;1m"
 
 
 void log(const char* message ...);
