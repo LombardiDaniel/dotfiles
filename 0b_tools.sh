@@ -6,7 +6,8 @@ strings $FILE_NAME # get strings inside hex
 
 man syscalls
 
-readelf -h hello.elf # /usr/local/opt/binutils/bin/ greadelf # binutils # on mac
+readelf -h hello.elf # /usr/local/opt/binutils/bin/ greadelf -S -W meu_arquivo.elf -# binutils # on mac
+nm main.out # mais inspect
 
 strace $FILE_NAME # prints out syscalls in program
 
