@@ -57,3 +57,5 @@ fi
 if [[ "$kernel" == "Linux" ]]; then
     setxkbmap us mac lv3:lalt_switch lv3:ralt_alt
 fi
+
+export PATH=$PATH:/usr/local/opt/binutils/bin
