@@ -59,3 +59,4 @@ if [[ "$kernel" == "Linux" ]]; then
 fi
 
 export PATH=$PATH:/usr/local/opt/binutils/bin
+export PATH="$(brew --prefix llvm)/bin:${PATH}"
