@@ -136,3 +136,8 @@ alias mkos="create_from_template 'OS'"
 # docker and SO
 alias here=start_OS_dev_env
 alias ghidra=ghidraRun
+
+
+# SSH connections
+alias rpi="ssh pi@10.1.10.20"
+alias macsrv="ssh superuser@10.1.10.10"
