@@ -10,9 +10,9 @@ venv_utils () {
     virtualenv -p python$1 venv.nosync
     source ./venv.nosync/bin/activate
 
-    # pip install flake8
-    # pip install pep8-naming
-    # pip install --upgrade pep8-naming
+    pip install flake8
+    pip install pep8-naming
+    pip install --upgrade pep8-naming
     pip install pylint
 
     pip install jedi
@@ -26,7 +26,7 @@ conda_utils () {
     conda create -n venv.nosync python=$1 anaconda
     source activate venv.nosync
 
-    # conda install -n venv.nosync flake8
+    conda install -n venv.nosync flake8
     conda install -n venv.nosync pylint
     conda install -n venv.nosync jedi
 
