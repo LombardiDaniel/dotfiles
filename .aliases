@@ -3,6 +3,7 @@ if [[ `uname` == "Darwin" ]]; then
     alias gdb='sudo gdb'
 fi
 
+
 # Python Virtualenvs
 venv_utils () {
     # We use 'venv.nosync' to make icloud ignore it, then the symlink is used to
@@ -16,6 +17,15 @@ venv_utils () {
     pip install pylint
 
     pip install jedi
+
+    ln -s venv.nosync venv
+}
+
+mk_venv () {
+    # We use 'venv.nosync' to make icloud ignore it, then the symlink is used to
+    # 'remove' the '.' from the name so that pylint from Atom can see it
+    virtualenv -p python$1 venv.nosync
+    source ./venv.nosync/bin/activate
 
     ln -s venv.nosync venv
 }
@@ -40,6 +50,8 @@ pip_freeze() {
     # pip install pylint > /dev/null 2>&1
 }
 
+
+# Templating
 create_from_template () {
 
     source_dir=${HOME}/dotfiles/TEMPLATES/${1}
@@ -113,11 +125,14 @@ alias mkconda3.7="conda_utils '3.7'"
 alias mkconda3.8="conda_utils '3.8'"
 alias mkconda3.9="conda_utils '3.9'"
 
+alias mkvenv0=mk_venv
 alias mkvenv3.7="venv_utils '3.7'"
 alias mkvenv3.8="venv_utils '3.8'"
 alias mkvenv3.9="venv_utils '3.9'"
 alias mkvenv3.10="venv_utils '3.10'"
 alias mkvenv=venv_utils
+
+alias pipu="pip install --upgrade pip"
 
 alias activenv='source ./venv.nosync/bin/activate'
 alias acticonda='source ~/anaconda3/envs/venv.nosync/bin/activate'
