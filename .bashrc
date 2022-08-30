@@ -148,3 +148,7 @@ fi
 
 
 export PATH=$PATH:$HOME/bin
+
+if [ -f "$HOME/.aliases_local" ]; then
+    source $HOME/.aliases_local
+fi

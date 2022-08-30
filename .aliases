@@ -142,7 +142,7 @@ alias condadel='conda remove -n venv.nosync -all'
 alias pipfrz=pip_freeze
 
 # helpers
-alias longline='echo "# noqa: E501 # pylint: disable=C0301"'
+alias longline='echo "  # noqa: E501 # pylint: disable=C0301"'
 
 # school work templates
 alias mkcpp="create_from_template 'CPP'"
