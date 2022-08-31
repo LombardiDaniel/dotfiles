@@ -134,7 +134,7 @@ alias mkvenv=venv_utils
 
 alias pipu="pip install --upgrade pip"
 
-alias activenv='source ./venv.nosync/bin/activate'
+alias activenv='source ./venv/bin/activate'
 alias acticonda='source ~/anaconda3/envs/venv.nosync/bin/activate'
 
 alias condadel='conda remove -n venv.nosync -all'
