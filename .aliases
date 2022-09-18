@@ -57,7 +57,7 @@ create_from_template () {
     source_dir=${HOME}/dotfiles/TEMPLATES/${1}
 
     copied_files=()
-    for file_path in "$source_dir/(.[^.]*|*)"; do
+    for file_path in "$source_dir/"(.[^.]*|*); do
         file="$(basename $file_path)"
 
         if [[ ! -f "./${file}" ]]; then
