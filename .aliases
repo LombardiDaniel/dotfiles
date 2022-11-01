@@ -130,6 +130,7 @@ alias mkvenv3.7="venv_utils '3.7'"
 alias mkvenv3.8="venv_utils '3.8'"
 alias mkvenv3.9="venv_utils '3.9'"
 alias mkvenv3.10="venv_utils '3.10'"
+alias mkvenv3.11="venv_utils '3.11'"
 alias mkvenv=venv_utils
 
 alias pipu="pip install --upgrade pip"

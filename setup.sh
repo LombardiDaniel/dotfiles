@@ -36,6 +36,7 @@ bpytop
 git
 hyper
 docker
+cloc
 )
 
 # Creates vim/undodir and installs plugin manager
