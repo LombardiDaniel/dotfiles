@@ -46,6 +46,8 @@ conda_utils () {
 python_log_utils() {
 
     echo "LOG_FORMAT = '%(asctime)s [%(levelname)s]:[%(name)s] p%(process)s {%(pathname)s:%(lineno)d} - %(message)s'  # pylint: disable=C0301"
+    echo "DATETIME_LOG_FORMAT = '%Y-%m-%d:%H:%M:%S'"
+    echo formatter = "logging.Formatter(LOG_FORMAT, DATETIME_LOG_FORMAT)"
     echo "self.logger = logging.getLogger(f'{__name__}.{self.__class__.__name__}')"
 }
 
