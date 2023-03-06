@@ -11,9 +11,9 @@ venv_utils () {
     virtualenv -p python$1 venv.nosync
     source ./venv.nosync/bin/activate
 
-    pip install flake8
-    pip install pep8-naming
-    pip install --upgrade pep8-naming
+    # pip install flake8
+    # pip install pep8-naming
+    # pip install --upgrade pep8-naming
     pip install pylint
 
     pip install jedi
@@ -36,12 +36,19 @@ conda_utils () {
     conda create -n venv.nosync python=$1 anaconda
     source activate venv.nosync
 
-    conda install -n venv.nosync flake8
+    # conda install -n venv.nosync flake8
     conda install -n venv.nosync pylint
     conda install -n venv.nosync jedi
 
     ln -s  /Users/daniellombardi/anaconda3/envs/venv.nosync venv
 }
+
+python_log_utils() {
+
+    echo "LOG_FORMAT = '%(asctime)s [%(levelname)s]:[%(name)s] p%(process)s {%(pathname)s:%(lineno)d} - %(message)s'  # pylint: disable=C0301"
+    echo "self.logger = logging.getLogger(f'{__name__}.{self.__class__.__name__}')"
+}
+
 
 pip_freeze() {
     pipreqs --use-local # https://github.com/bndr/pipreqs
@@ -134,6 +141,8 @@ alias mkvenv3.11="venv_utils '3.11'"
 alias mkvenv=venv_utils
 
 alias pipu="pip install --upgrade pip"
+
+alias pylog="python_log_utils"
 
 alias activenv='source ./venv/bin/activate'
 alias acticonda='source ~/anaconda3/envs/venv.nosync/bin/activate'
