@@ -172,3 +172,4 @@ alias ghidra=ghidraRun
 # SSH connections
 alias rpi="ssh pi@10.1.10.20"
 alias macsrv="ssh superuser@10.1.10.10"
+alias clock="cloc --exclude-dir="venv.nosync" ."
