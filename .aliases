@@ -146,7 +146,8 @@ alias pipu="pip install --upgrade pip"
 
 alias pylog="python_log_utils"
 
-alias activenv='source ./venv/bin/activate && source venv.nosync/usr/local/bin/activate'
+alias activenv='source ./venv/bin/activate'
+alias activenv3.11='source venv.nosync/usr/local/bin/activate'
 alias acticonda='source ~/anaconda3/envs/venv.nosync/bin/activate'
 
 alias condadel='conda remove -n venv.nosync -all'
