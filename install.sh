@@ -14,7 +14,9 @@ gdbinit
 
 
 for i in ${dotfiles[@]} ; do
-    rm ~/.$i
+    if [ -f "~/.$i" ]; then
+        rm ~/.$i
+    fi
     ln -snf ~/dotfiles/.$i ~/.$i
 done
 

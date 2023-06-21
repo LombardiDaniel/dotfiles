@@ -44,11 +44,7 @@ conda_utils () {
 }
 
 python_log_utils() {
-
-    echo "LOG_FORMAT = '%(asctime)s [%(levelname)s]:[%(name)s] p%(process)s {%(pathname)s:%(lineno)d} - %(message)s'  # pylint: disable=C0301"
-    echo "DATETIME_LOG_FORMAT = '%Y-%m-%d:%H:%M:%S'"
-    echo formatter = "logging.Formatter(LOG_FORMAT, DATETIME_LOG_FORMAT)"
-    echo "self.logger = logging.getLogger(f'{__name__}.{self.__class__.__name__}')"
+    cat ./TEMPLATES/PYTHON/constants.py
 }
 
 
@@ -168,9 +164,9 @@ alias mkos="create_from_template 'OS'"
 # docker and SO
 alias here=start_OS_dev_env
 alias ghidra=ghidraRun
-
+alias k=kubectl
+alias clock="cloc --exclude-dir="venv.nosync" ."
 
 # SSH connections
-alias rpi="ssh pi@10.1.10.20"
+alias rpi="ssh daniel@raspberrypi.local"
 alias macsrv="ssh superuser@10.1.10.10"
-alias clock="cloc --exclude-dir="venv.nosync" ."

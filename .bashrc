@@ -7,7 +7,7 @@ esac
 source $HOME/dotfiles/.aliases
 source $HOME/dotfiles/.envvars
 
-export MARVIN_DATA_PATH=/home/$USER/marvin/data
+# export MARVIN_DATA_PATH=/home/$USER/marvin/data
 
 # Path to your oh-my-bash installation.
 export OSH=/home/$USER/.oh-my-bash
