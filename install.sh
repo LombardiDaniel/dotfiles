@@ -26,6 +26,8 @@ bpytop
 )
 
 for i in ${confs[@]} ; do
-    rm ~/.config/$i/${i}.conf
+    if [ -f "~/.config/$i/${i}.conf" ]; then
+        rm ~/.config/$i/${i}.conf
+    fi
     ln -snf ~/dotfiles/$i.conf ~/.config/$i/${i}.conf
 done
