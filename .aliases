@@ -167,6 +167,6 @@ alias ghidra=ghidraRun
 alias k=kubectl
 alias clock="cloc --exclude-dir="venv.nosync" ."
 
-# SSH connections
-alias rpi="ssh daniel@raspberrypi.local"
-alias macsrv="ssh superuser@10.1.10.10"
+# SSH connections (local)
+alias rpi="ssh raspberrypi.local"
+alias macsrv="ssh mac-server.local"
