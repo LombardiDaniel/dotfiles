@@ -175,7 +175,7 @@ module.exports = {
         "hyper-window-size",
         "hyper-quit",
         // "hyper-opacity",
-        'hyper-transparent',
+        // 'hyper-transparent',
         "hyper-oceanic-next"
     ],
 
