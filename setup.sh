@@ -37,6 +37,7 @@ git
 hyper
 docker
 cloc
+zsh-syntax-highlighting
 )
 
 # Creates vim/undodir and installs plugin manager
