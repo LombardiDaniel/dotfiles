@@ -138,6 +138,9 @@ alias mkvenv3.10="venv_utils '3.10'"
 alias mkvenv3.11="venv_utils '3.11'"
 alias mkvenv=venv_utils
 
+alias pip="pip3"
+alias python="python3"
+
 alias pipu="pip install --upgrade pip"
 
 alias pylog="python_log_utils"
