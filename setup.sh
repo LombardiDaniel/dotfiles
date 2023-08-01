@@ -32,6 +32,7 @@ fi
 
 # Installs base packages and the hyper terminal
 base_installs=(
+act
 bpytop
 git
 hyper

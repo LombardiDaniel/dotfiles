@@ -15,7 +15,7 @@ venv_utils () {
     # pip install pep8-naming
     # pip install --upgrade pep8-naming
     pip install pylint
-
+    pip install ansible-lint
     pip install jedi
 
     ln -s venv.nosync venv
