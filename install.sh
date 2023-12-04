@@ -1,5 +1,8 @@
 #!/bin/bash
 
+mkdir -p ~/.kube
+cp .kube/kind.yml ~/.kube/kind.yml
+
 # Dotfiles
 dotfiles=(
 gitconfig

@@ -64,3 +64,12 @@ export PATH="$(brew --prefix llvm)/bin:${PATH}"
 if [ -f "$HOME/.aliases_local" ]; then
     source $HOME/.aliases_local
 fi
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/daniellombardi/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/daniellombardi/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/daniellombardi/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/daniellombardi/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+export PATH=/Users/daniellombardi/bin:$PATH
+
+[[ -e "/Users/daniellombardi/lib/oracle-cli/lib/python3.11/site-packages/oci_cli/bin/oci_autocomplete.sh" ]] && source "/Users/daniellombardi/lib/oracle-cli/lib/python3.11/site-packages/oci_cli/bin/oci_autocomplete.sh"

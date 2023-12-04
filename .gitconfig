@@ -3,6 +3,7 @@
 [user]
     name = Daniel Lombardi
     email = lombardi.daniel.o@gmail.com
+	signingkey = /Users/daniellombardi/.ssh/id_rsa.pub
 [core]
     editor = vim
 [credential]
@@ -15,3 +16,5 @@
 	process = git-lfs filter-process
 	required = true
 	clean = git-lfs clean -- %f
+[gpg]
+	format = ssh

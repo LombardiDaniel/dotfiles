@@ -171,5 +171,7 @@ alias k=kubectl
 alias clock="cloc --exclude-dir="venv.nosync" ."
 
 # SSH connections (local)
-alias rpi="ssh raspberrypi.local"
+alias rpi="ssh 10.1.10.46"
 alias macsrv="ssh mac-server.local"
+
+alias kindm="kind create cluster --config ~/.kube/kind.yml"
