@@ -171,6 +171,10 @@ alias ghidra=ghidraRun
 alias k=kubectl
 alias clock="cloc --exclude-dir="venv.nosync" ."
 
+alias dockermu=colima start --profile rosetta --cpu 4 --memory 4 --disk 100 --arch aarch64 --vm-type=vz --vz-rosetta
+# And then use it with docker context use colima-rosetta, and then proceed to docker run --platform=linux/amd64 ...
+# https://github.com/abiosoft/colima/issues/805
+
 # SSH connections (local)
 alias rpi="ssh 10.1.10.46"
 alias macsrv="ssh mac-server.local"
