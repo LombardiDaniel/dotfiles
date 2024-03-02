@@ -179,5 +179,4 @@ alias macsrv="ssh mac-server.local"
 
 alias kindm="kind create cluster --config ~/.kube/kind.yml"
 
-alias protocr="protoc --go_out=PACKAGE --go_opt=paths=source_relative --go-grpc_out=PACKAGE --go-grpc_opt=paths=source_relati
-ve PACKAGE.proto"
+alias protocr="protoc --go_out=PACKAGE --go_opt=paths=source_relative --go-grpc_out=PACKAGE --go-grpc_opt=paths=source_relative PACKAGE.proto"
