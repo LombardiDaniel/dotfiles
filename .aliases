@@ -181,3 +181,8 @@ alias kindm="kind create cluster --config ~/.kube/kind.yml"
 
 alias protocr="echo 'protoc --go_out=servers --go_opt=paths=source_relative --go-grpc_out=servers --go-grpc_opt=paths=source_relative server.proto'"
 alias protocserver="protoc --go_out=servers --go_opt=paths=source_relative --go-grpc_out=servers --go-grpc_opt=paths=source_relative server.proto"
+# alias protocclient="protoc --go_out=clients --go_opt=paths=source_relative --go-grpc_out=clients --go-grpc_opt=paths=source_relative server.proto"
+
+protocclient() {
+    protoc --go_out=clients --go_opt=paths=source_relative --go-grpc_out=clients --go-grpc_opt=paths=source_relative ${1}.proto
+}
