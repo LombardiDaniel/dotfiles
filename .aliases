@@ -188,5 +188,5 @@ protocclient() {
 }
 
 protocclientpy() {
-    protoc --python_out=./$1 $1.proto
+    protoc --python_out=. $1.proto
 }
