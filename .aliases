@@ -186,3 +186,7 @@ alias protocserver="protoc --go_out=servers --go_opt=paths=source_relative --go-
 protocclient() {
     protoc --go_out=$1 --go_opt=paths=source_relative --go-grpc_out=$1 --go-grpc_opt=paths=source_relative $1.proto
 }
+
+protocclientpy() {
+    protoc --python_out=./$1 $1.proto
+}
