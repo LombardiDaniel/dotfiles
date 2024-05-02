@@ -3,7 +3,8 @@ export ZSH="$HOME/.oh-my-zsh"
 export PATH=$(go env GOPATH)/bin:$PATH
 
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="agnoster"
+# ZSH_THEME="agnoster"
+ZSH_THEME="bira"
 
 plugins=(
     git
