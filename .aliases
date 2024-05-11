@@ -190,3 +190,5 @@ protocclient() {
 protocclientpy() {
     protoc --python_out=. $1.proto
 }
+
+alias exportenv="export $(grep -v '^#' .env | xargs)"
