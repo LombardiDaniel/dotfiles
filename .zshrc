@@ -35,25 +35,6 @@ source $HOME/dotfiles/.envvars
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('$HOME/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "$HOME/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "$HOME/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="$HOME/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
-
 #### - Setting keyboard accents for Apple Keyboard -  ####
 # > Should be done on boot -> make cronjob?
 if [[ "$kernel" == "Linux" ]]; then
@@ -68,43 +49,12 @@ if [ -f "$HOME/.aliases_local" ]; then
 fi
 export PATH=/Users/daniellombardi/bin:$PATH
 
-[[ -e "/Users/daniellombardi/lib/oracle-cli/lib/python3.11/site-packages/oci_cli/bin/oci_autocomplete.sh" ]] && source "/Users/daniellombardi/lib/oracle-cli/lib/python3.11/site-packages/oci_cli/bin/oci_autocomplete.sh"
-
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/daniellombardi/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/daniellombardi/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/daniellombardi/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/daniellombardi/google-cloud-sdk/completion.zsh.inc'; fi
 
-
-# JINA_CLI_BEGIN
-
-## autocomplete
-if [[ ! -o interactive ]]; then
-    return
-fi
-
-compctl -K _jina jina
-
-_jina() {
-  local words completions
-  read -cA words
-
-  if [ "${#words}" -eq 2 ]; then
-    completions="$(jina commands)"
-  else
-    completions="$(jina completions ${words[2,-2]})"
-  fi
-
-  reply=(${(ps:
-:)completions})
-}
-
-# session-wise fix
-ulimit -n 4096
-export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
-
-# JINA_CLI_END
 
 
 

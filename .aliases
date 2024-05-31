@@ -173,9 +173,6 @@ alias clock="cloc --exclude-dir="venv.nosync" ."
 
 alias dockermu="colima start --cpu 6 --memory 4 --arch x86_64 --vz-rosetta"
 
-# SSH connections (local)
-alias rpi="ssh 10.1.10.46"
-alias macsrv="ssh mac-server.local"
 
 alias kindm="kind create cluster --config ~/.kube/kind.yml"
 
@@ -191,4 +188,6 @@ protocclientpy() {
     protoc --python_out=. $1.proto
 }
 
-alias exportenv="export $(grep -v '^#' .env | xargs)"
+exportenv() {
+    export $(grep -v '^#' .env | xargs)
+}
