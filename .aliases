@@ -185,9 +185,15 @@ protocclient() {
 }
 
 protocclientpy() {
+    python -m pip install grpcio-tools
     protoc --python_out=. $1.proto
+    python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. $1.proto
 }
 
 exportenv() {
     export $(grep -v '^#' .env | xargs)
+}
+
+getdlv() {
+    go get github.com/go-delve/delve/cmd/dlv
 }
