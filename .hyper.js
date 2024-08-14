@@ -7,8 +7,8 @@ module.exports = {
     // Plugins
     catppuccinTheme: "Frappé",
     hyperTransparent: {
-      backgroundColor: "#222C31",
-      //   backgroundColor: "#14191c",
+      // backgroundColor: "#222C31",
+      backgroundColor: "#303446",
       blur: 0.9,
       vibrancy: "ultra-dark", // ['', 'dark', 'medium-light', 'ultra-dark']
     },
