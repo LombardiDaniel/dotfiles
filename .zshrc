@@ -6,6 +6,9 @@ export PATH=$(go env GOPATH)/bin:$PATH
 # ZSH_THEME="agnoster"
 ZSH_THEME="bira"
 
+CATPPUCCIN_THEME=catppuccin_frappe-zsh-syntax-highlighting.zsh
+source ~/.zsh/$CATPPUCCIN_THEME
+
 plugins=(
     git
     zsh-syntax-highlighting

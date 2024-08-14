@@ -197,3 +197,8 @@ exportenv() {
 getdlv() {
     go get github.com/go-delve/delve/cmd/dlv
 }
+
+colimax86() {
+    colima start --arch aarch64 --vm-type=vz --vz-rosetta --cpu 4 --memory 8
+#    colima start default --arch x86_64 --cpu 4 --memory 4 --disk 100 --vm-type=vz --vz-rosetta
+}

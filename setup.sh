@@ -84,3 +84,8 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
+
+mkdir ~/.zsh
+git clone https://github.com/catppuccin/zsh-syntax-highlighting.git
+cp zsh-syntax-highlighting/themes/* ~/.zsh/
+rm -r zsh-syntax-highlighting
