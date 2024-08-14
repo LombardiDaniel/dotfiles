@@ -3,8 +3,9 @@ export ZSH="$HOME/.oh-my-zsh"
 export PATH=$(go env GOPATH)/bin:$PATH
 
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="agnoster"
-ZSH_THEME="bira"
+ZSH_THEME="agnoster"
+# ZSH_THEME="bira"
+
 
 CATPPUCCIN_THEME=catppuccin_frappe-zsh-syntax-highlighting.zsh
 source ~/.zsh/$CATPPUCCIN_THEME
@@ -15,6 +16,11 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
+
+prompt_context() {
+    prompt_segment black default "$USER"
+}
+
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
