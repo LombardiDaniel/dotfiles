@@ -44,7 +44,7 @@ conda_utils () {
 }
 
 python_log_utils() {
-    cat ./TEMPLATES/PYTHON/constants.py
+    cat ~/dotfiles/TEMPLATES/PYTHON/constants.py
 }
 
 
@@ -145,17 +145,14 @@ alias python="python3"
 alias pipu="pip install --upgrade pip"
 
 alias pylog="python_log_utils"
+alias golog="cat ~/dotfiles/TEMPLATES/GO/logger.go"
 
-alias activenv='source ./venv/bin/activate'
-alias activenv3.11='source venv.nosync/usr/local/bin/activate'
-alias acticonda='source ~/anaconda3/envs/venv.nosync/bin/activate'
-
-alias condadel='conda remove -n venv.nosync -all'
+alias condadel="conda remove -n venv.nosync -all"
 
 alias pipfrz=pip_freeze
 
 # helpers
-alias longline='echo "  # noqa: E501 # pylint: disable=C0301"'
+alias longlinepy='echo "  # noqa: E501 # pylint: disable=C0301"'
 
 # school work templates
 alias mkcpp="create_from_template 'CPP'"
@@ -163,6 +160,7 @@ alias mkcpproj="create_from_template 'CPP_PROJECT'"
 alias mkc="create_from_template 'C'"
 alias mkso="create_from_template 'OS'"
 alias mkos="create_from_template 'OS'"
+alias mkembrs="cargo generate esp-rs/esp-idf-template cargo"
 
 
 # docker and SO
