@@ -5,6 +5,10 @@
 module.exports = {
   config: {
     // Plugins
+    hyperWindowSize: {
+      width: 1100,
+      height: 440,
+    },
     catppuccinTheme: "Frappé",
     hyperTransparent: {
       // backgroundColor: "#222C31",

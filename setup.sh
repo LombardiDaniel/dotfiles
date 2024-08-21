@@ -39,6 +39,7 @@ hyper
 docker
 cloc
 zsh-syntax-highlighting
+powerlevel10k
 )
 
 # Creates vim/undodir and installs plugin manager
