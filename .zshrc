@@ -59,6 +59,7 @@ fi
 
 export PATH=$PATH:/usr/local/opt/binutils/bin
 export PATH="$(brew --prefix llvm)/bin:${PATH}"
+source $HOME/export-esp.sh
 
 if [ -f "$HOME/.aliases_local" ]; then
     source $HOME/.aliases_local

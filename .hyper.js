@@ -7,7 +7,7 @@ module.exports = {
     // Plugins
     hyperWindowSize: {
       width: 1100,
-      height: 440,
+      height: 480,
     },
     catppuccinTheme: "Frappé",
     hyperTransparent: {
