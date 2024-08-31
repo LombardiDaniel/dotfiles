@@ -200,3 +200,22 @@ colimax86() {
     colima start --arch aarch64 --vm-type=vz --vz-rosetta --cpu 4 --memory 8
 #    colima start default --arch x86_64 --cpu 4 --memory 4 --disk 100 --vm-type=vz --vz-rosetta
 }
+
+syncsrv() {
+    # trap "exit" INT
+
+    if [ $# -ne 3 ]; then
+        echo "Run 'syncsrv <REMOTE_HOST> <REMOTE_USER> <REMOTE_DIR>'"
+        return 1
+    fi
+
+    LOCAL_DIR="."
+    REMOTE_HOST=$1
+    REMOTE_USER=$2
+    REMOTE_DIR=$3
+
+    while true; do
+        rsync -rtuvc --mkpath --delete $LOCAL_DIR $REMOTE_USER@$REMOTE_HOST:$REMOTE_DIR
+        sleep 0.1
+    done
+}
