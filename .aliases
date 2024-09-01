@@ -202,7 +202,7 @@ colimax86() {
 }
 
 syncsrv() {
-    # trap "exit" INT
+    trap "exit" INT
 
     if [ $# -ne 3 ]; then
         echo "Run 'syncsrv <REMOTE_HOST> <REMOTE_USER> <REMOTE_DIR>'"
@@ -215,7 +215,11 @@ syncsrv() {
     REMOTE_DIR=$3
 
     while true; do
-        rsync -rtuvc --mkpath --delete $LOCAL_DIR $REMOTE_USER@$REMOTE_HOST:$REMOTE_DIR
+        rsync -rtuvc --relative $REMOTE_DIR --delete $LOCAL_DIR $REMOTE_USER@$REMOTE_HOST:$REMOTE_DIR
+        VAL=$?
+        if [ "$VAL" != "0" ] && [ "$VAL" != "23" ]; then
+            return $VAL
+        fi
         sleep 0.1
     done
 }
