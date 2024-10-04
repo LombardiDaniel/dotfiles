@@ -201,6 +201,18 @@ colimax86() {
 #    colima start default --arch x86_64 --cpu 4 --memory 4 --disk 100 --vm-type=vz --vz-rosetta
 }
 
+genpass() {
+    if [ $# -eq 0 ]; then
+        echo "Run 'genpass <PASS_LEN>'"
+        return 1
+    fi
+
+    LENGHT=$1
+    PASSWORD=$(head -c $LENGHT /dev/urandom | base64 | tr -dc 'a-zA-Z0-9')
+
+    echo $PASSWORD
+}
+
 syncsrv() {
     trap "exit" INT
 
