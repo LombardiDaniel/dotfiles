@@ -72,11 +72,7 @@ if [ -f '/Users/daniellombardi/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/daniellombardi/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/daniellombardi/google-cloud-sdk/completion.zsh.inc'; fi
 
-
-
-
-
-
+source ~/.mgc
 
 
 source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
