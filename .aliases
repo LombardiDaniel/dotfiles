@@ -208,7 +208,7 @@ genpass() {
     fi
 
     LENGHT=$1
-    PASSWORD=$(head -c $LENGHT /dev/urandom | base64 | tr -dc 'a-zA-Z0-9')
+    PASSWORD=$(head -c $LENGHT /dev/urandom | base64 | tr -dc 'a-zA-Z0-9' | cut -c 1-$LENGHT)
 
     echo $PASSWORD
 }
@@ -234,4 +234,8 @@ syncsrv() {
         fi
         sleep 0.1
     done
+}
+
+multiarch() {
+    echo "podman build --platform linux/amd64,linux/arm64 ."
 }
