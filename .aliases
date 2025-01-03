@@ -21,13 +21,17 @@ venv_utils () {
     ln -s venv.nosync venv
 }
 
-mk_venv () {
+mkvenv () {
     # We use 'venv.nosync' to make icloud ignore it, then the symlink is used to
     # 'remove' the '.' from the name so that pylint from Atom can see it
     virtualenv -p python$1 venv.nosync
     source ./venv.nosync/bin/activate
 
     ln -s venv.nosync venv
+}
+
+activenv () {
+    source ./venv.nosync/bin/activate
 }
 
 conda_utils () {
@@ -85,59 +89,6 @@ create_from_template () {
     fi
 
 }
-
-start_OS_dev_env_NO_COLIMA () {
-
-    docker ps > /dev/null 2>&1
-    if [ $? -eq 1 ]; then
-        echo "Launching Docker..."
-        open -a docker
-
-        docker ps > /dev/null 2>&1
-        while [ $? -eq 1 ]
-        do
-            sleep 1
-            docker ps > /dev/null 2>&1
-        done
-    fi
-
-    docker run --rm -it -v $(pwd):/usr/src gcc:latest # "cd /usr/src && ls"
-}
-
-start_OS_dev_env () {
-
-    docker ps > /dev/null 2>&1
-    if [ $? -eq 1 ]; then
-        colima start
-    fi
-
-    # docker run --rm -it -v $(pwd):/usr/src/project -w="/usr/src/project" gcc:latest "/bin/sh"
-
-    docker run --rm -it -v "`pwd`:/usr/src/project" gcc:latest /bin/sh -c "cd /usr/src/project && ls && /bin/bash"
-
-    RED='\033[0;31m'
-    NC='\033[0m' # No Color
-
-    echo $RED
-    echo "Don't forget to run 'colima stop' if you're done using containers."
-    echo $NC
-    # colima stop
-}
-
-# python venvs
-alias mkconda="conda_utils '3.7'"
-alias mkconda3.7="conda_utils '3.7'"
-alias mkconda3.8="conda_utils '3.8'"
-alias mkconda3.9="conda_utils '3.9'"
-
-alias mkvenv0=mk_venv
-alias mkvenv3.7="venv_utils '3.7'"
-alias mkvenv3.8="venv_utils '3.8'"
-alias mkvenv3.9="venv_utils '3.9'"
-alias mkvenv3.10="venv_utils '3.10'"
-alias mkvenv3.11="venv_utils '3.11'"
-alias mkvenv3.12="venv_utils '3.12'"
-alias mkvenv=venv_utils
 
 alias pip="pip3"
 alias python="python3"
