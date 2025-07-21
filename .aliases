@@ -168,7 +168,7 @@ syncsrv() {
     trap "exit" INT
 
     if [ $# -ne 3 ]; then
-        echo "Run 'syncsrv <REMOTE_HOST> <REMOTE_USER> <REMOTE_DIR>'"
+        echo "Run 'syncsrv <REMOTE_HOST> <REMOTE_USER> <REMOTE_DIR>' - keeps current current dir in sync with remote"
         return 1
     fi
 
