@@ -65,6 +65,7 @@ if [ -f "$HOME/.aliases_local" ]; then
     source $HOME/.aliases_local
 fi
 export PATH=/Users/daniellombardi/bin:$PATH
+export PATH="/Users/daniellombardi/.bun/bin:$PATH"
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/daniellombardi/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/daniellombardi/google-cloud-sdk/path.zsh.inc'; fi
