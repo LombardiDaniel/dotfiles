@@ -80,3 +80,10 @@ source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+
+# Added by Antigravity
+export PATH="/Users/daniellombardi/.antigravity/antigravity/bin:$PATH"
+
+# Created by `pipx` on 2026-04-27 00:36:10
+export PATH="$PATH:/Users/daniellombardi/.local/bin"

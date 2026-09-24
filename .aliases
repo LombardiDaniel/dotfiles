@@ -90,16 +90,6 @@ create_from_template () {
 
 }
 
-alias pip="pip3"
-alias python="python3"
-
-alias pipu="pip install --upgrade pip"
-
-alias pylog="python_log_utils"
-alias golog="cat ~/dotfiles/TEMPLATES/GO/logger.go"
-
-alias condadel="conda remove -n venv.nosync -all"
-
 alias pipfrz=pip_freeze
 
 # helpers
@@ -141,6 +131,10 @@ protocclientpy() {
 
 exportenv() {
     export $(grep -v '^#' .env | xargs)
+}
+
+exportprod() {
+    export $(grep -v '^#' .prod.env | xargs)
 }
 
 getdlv() {
@@ -190,3 +184,9 @@ syncsrv() {
 multiarch() {
     echo "podman build --platform linux/amd64,linux/arm64 ."
 }
+
+killport() {
+    kill -9 $(lsof -t -i :$1)
+}
+
+
